@@ -23,8 +23,3 @@ $validationRules = json_decode($form['validation_rules'], true);
     </div>
 <?php endforeach; ?>
 
-<!-- Delete Button -->
-<form id="delete-form" method="POST" action="delete_entry.php">
-    <input type="hidden" name="form_id" value="<?= $id ?>">
-    <button type="submit" class="btn btn-danger mt-3">Delete Form</button>
-</form>
