@@ -14,10 +14,11 @@ $fields = json_decode($response['fields'], true);
 $validationRules = json_decode($response['validation_rules'], true);
 
 $errors = [];
-foreach ($fields as $field) {
+
+foreach ($fields as $key => $field) {
     $name = $field['name'];
     $value = isset($data[$name]) ? trim($data[$name]) : '';
-
+    $fields[$key]['value'] = $value;
     // Apply validation rules
     if (isset($validationRules[$name])) {
         $rules = explode('|', $validationRules[$name]);

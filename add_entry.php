@@ -49,7 +49,7 @@ $forms = $db->query("SELECT * FROM forms");
 
             if (formId) {
                 $.ajax({
-                    url: 'view_entry.php',
+                    url: 'fetch_form.php',
                     method: 'GET',
                     data: { id: formId },
                     success: function(response) {
@@ -104,6 +104,7 @@ $forms = $db->query("SELECT * FROM forms");
                         success: function(response) {
                             
                             console.log(response);
+                            alert(response);
                             $('#dynamic-form')[0].reset();
                         }
                     });
