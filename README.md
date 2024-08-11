@@ -10,7 +10,7 @@ This project is a Core PHP application that allows for the dynamic creation, dis
 
 - **Form Storage**: Form metadata is stored in a MySQL database.
 - **Form Display**: Dynamically generated forms are displayed using Bootstrap for a clean and responsive design.
-- **Form Submission**: Forms are submitted via AJAX, validated server-side, and the submissions are stored in a database. An email is sent out for fields marked to be sent.
+- **Form Submission**: Forms are submitted via AJAX, validated server-side, and the submissions are stored in a database.
 - **Bot Prevention**: Includes mechanisms to prevent automated bots from submitting forms.
 - **OOP-based Architecture**: The application is structured using object-oriented programming principles to ensure maintainability and scalability.
 - **Docker Deployment**: The application is set up to run within a Docker container, ensuring consistent environments across different stages of development and deployment.
@@ -27,4 +27,3 @@ This project is a Core PHP application that allows for the dynamic creation, dis
 ### NOTE
 1- Database .sql file exist in project structure
 2- Postman API Screen shot available that shows how to create API and API_CALL.json file available in project.
-3- 
