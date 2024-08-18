@@ -3,7 +3,8 @@ require 'Database.php';
 
 $data = $_POST;
 $formId = $data['form_id'];
-$response = $db->query("SELECT * FROM forms WHERE id = ?", [$formId])->fetch_assoc();
+$formResult = $db->read('forms', ['id' => $formId]);
+$response = $formResult->fetch_assoc();
 
 if (!$response) {
     echo json_encode(['status' => 'error', 'message' => 'Invalid form ID']);
@@ -49,8 +50,8 @@ if (!empty($errors)) {
 }
 
 // Insert into database
-$query = "INSERT INTO form_submissions (form_id, form_data) VALUES (?, ?)";
-$result = $db->query($query, [$formId, json_encode($fields)]);
+$result = $db->create('form_submissions', ['form_id' => $formId, 'form_data' => json_encode($fields)]);
+
 
 if ($result) {
     echo json_encode(['status' => 'success', 'message' => 'Entry added successfully']);

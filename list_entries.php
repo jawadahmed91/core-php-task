@@ -36,7 +36,7 @@ $results = $db->query("SELECT * FROM form_submissions ORDER BY submitted_at DESC
                             <td><?= date('Y-m-d H:i:s', strtotime($row['submitted_at'])) ?></td>
                             <td>
                                 <a href="view_entry.php?id=<?= $row['id'] ?>" class="btn btn-primary btn-sm">View</a>
-                                <a href="delete_entry.php?id=<?= $row['form_id'] ?>" id="delete-form" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure you want to delete this entry?')" data-id="<?= $row['form_id'] ?>">Delete</a>
+                                <a href="delete_entry.php?id=<?= $row['id'] ?>" id="delete-form" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure you want to delete this entry?')" data-id="<?= $row['id'] ?>">Delete</a>
                             </td>
                         </tr>
                     <?php endwhile; ?>

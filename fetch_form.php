@@ -2,8 +2,9 @@
 require 'Database.php';
 
 $id = $_GET['id'];
-$formResult = $db->query("SELECT * FROM forms WHERE id = ?", [$id]);
+$formResult = $db->read('forms', ['id' => $id]);
 $form = $formResult->fetch_assoc();
+
 
 $fields = json_decode($form['fields'], true);
 $validationRules = json_decode($form['validation_rules'], true);

@@ -2,7 +2,7 @@
 require 'Database.php';
 
 $id = $_GET['id'];
-$formResult = $db->query("SELECT * FROM form_submissions WHERE id = ?", [$id]);
+$formResult = $db->read('form_submissions', ['id' => $id]);
 $form = $formResult->fetch_assoc();
 
 $fields = json_decode($form['form_data'], true);
